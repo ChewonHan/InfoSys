@@ -56,12 +56,14 @@ public class AlphabetGenerator {
      *         digit should be translated into.
      */
 
-        /*public static final char[] BASIC_ALPHABET =
+    public static final char[] BASIC_ALPHABET =
                 {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};*/
+                        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
     public static char[] generateFrequencyAlphabet(int base,
                                                    String[] trainingData) {
+
+
         // TODO: Implement (Problem f)
         if (base < 0)
             return null;
@@ -84,13 +86,14 @@ public class AlphabetGenerator {
                 }
             }
         }
+
         Map<Character, Float> probability = new HashMap<>();
 
         float prior = 0f;
         for (char i : BASIC_ALPHABET) {
             float prob = (float) charMap.get(i)/total_chars;
             probability.put(i, prob + prior);
-            prior = prior + prob;
+            prior += prior;
         }
 
         char[] output = new char[base];
@@ -98,7 +101,7 @@ public class AlphabetGenerator {
         for (char i : BASIC_ALPHABET) {
             int upper = Math.round(probability.get(i) * base) -1;
             while ((j <= upper) && (j < base)) {
-                output[j] = 1;
+                output[j] = i;
                 j++;
             }
         }

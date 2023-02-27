@@ -3,7 +3,7 @@ package problemset1a;
 import java.util.Date;
 
 // static keyword --> set attribute/ method to class attribute/ method
-public class Account {
+class Account {
 
     private int id; // when should i use Integer and int -> int is for declaring variable/ Integer is for indicating the data type
     private static double balance;
