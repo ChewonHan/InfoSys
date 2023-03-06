@@ -16,3 +16,4 @@ rootProject.name = "JavaPrograms"
 include ':app'
 include ':JavaLib'
 include ':app'
+include ':app'
