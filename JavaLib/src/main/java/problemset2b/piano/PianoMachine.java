@@ -74,6 +74,8 @@ public class PianoMachine {
     //TODO write method spec
     public void changeInstrument() {
        	//TODO: implement for question 2
+        Instrument nextInstr = currentInstr.next();
+        currentInstr = nextInstr;
     }
     
     //TODO write method spec
