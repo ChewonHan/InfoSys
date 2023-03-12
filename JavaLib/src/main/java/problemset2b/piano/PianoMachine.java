@@ -12,6 +12,7 @@ import midi.Midi;
 import midi.Instrument;
 import music.Pitch;
 import music.NoteEvent;
+import problemset2b.music.NoteEvent;
 
 public class PianoMachine {
 
@@ -96,16 +97,55 @@ public class PianoMachine {
             currentSft += -1;
         }
     }
-    
+
+    boolean record = false;
+
     //TODO write method spec
     public boolean toggleRecording() {
-    	return false;
+
     	//TODO: implement for question 4
+
+        record = !(record);
+        if (record && output.size() != 0){
+            for (NoteEvent notes : output){
+                output.remove(notes);
+            }
+        }
+        return record;
     }
     
     //TODO write method spec
     public void playback() {    	
         //TODO: implement for question 4
-    }
 
+        for ( int i = 0; i < output.size(); i ++){
+            long time = i;
+            if (i != output.size() -1 ){
+                   time = output.get(i + 1).getTime() - output.get(i).getTime();
+            }
+            else{
+                time = 0;
+            }
+
+            NoteEvent notes = output.get(i);
+
+            if (notes.getKind() == NoteEvent.Kind.start){
+                midi.beginNote(notes.getPitch().toMidiFrequency(), notes.getInstr());
+                try{
+                    Thread.sleep(time);
+                } catch (InterruptedException exp) {
+                    exp.printStackTrace();
+                }
+            }
+            else if (notes.getKind() == NoteEvent.Kind.stop){
+                midi.endNote(notes.getPitch().toMidiFrequency(), notes.getInstr());
+                try {
+                    Thread.sleep(time);
+                } catch (InterruptedException exp){
+                    exp.printStackTrace();
+                }
+            }
+        }
+        return;
+    }
 }
