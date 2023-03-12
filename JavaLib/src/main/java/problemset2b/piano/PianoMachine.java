@@ -74,6 +74,7 @@ public class PianoMachine {
     //TODO write method spec
     public void changeInstrument() {
        	//TODO: implement for question 2
+
         Instrument nextInstr = currentInstr.next();
         currentInstr = nextInstr;
     }
@@ -81,11 +82,19 @@ public class PianoMachine {
     //TODO write method spec
     public void shiftUp() {
     	//TODO: implement for question 3
+
+        if (currentSft < 2){
+            currentSft += 1;
+        }
     }
     
     //TODO write method spec
     public void shiftDown() {
     	//TODO: implement for question 3
+
+        if (currentSft > -2){
+            currentSft += -1;
+        }
     }
     
     //TODO write method spec
