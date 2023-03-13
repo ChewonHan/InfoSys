@@ -2,7 +2,7 @@
  * 6.005 Elements of Software Construction
  * (c) 2007-8-9, MIT and Rob Miller
  */
-package midi;
+package problemset2b.midi;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ public class Midi {
 	
     private Synthesizer synthesizer;
 
-    public final static Instrument DEFAULT_INSTRUMENT = Instrument.PIANO;
+    public final static midi.Instrument DEFAULT_INSTRUMENT = midi.Instrument.PIANO;
     
     // active MIDI channels, assigned to instruments
     private final Map<midi.Instrument, MidiChannel> channels = new HashMap<midi.Instrument,MidiChannel>();

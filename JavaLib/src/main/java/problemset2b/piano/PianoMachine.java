@@ -1,4 +1,4 @@
-package piano;
+package problemset2b.piano;
 
 
 
@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 import javax.sound.midi.MidiUnavailableException;
 
-import midi.Midi;
+import problemset2b.midi.Midi;
 import midi.Instrument;
 import music.Pitch;
-import music.NoteEvent;
+import problemset2b.midi.Midi;
 import problemset2b.music.NoteEvent;
 
 public class PianoMachine {
@@ -19,7 +19,7 @@ public class PianoMachine {
     ArrayList<Pitch> notes = new ArrayList<>();
     ArrayList<NoteEvent> output = new ArrayList<>();
 
-    Instrument currentInstr = Midi.DEFAULT_INSTRUMENT;
+    Instrument currentInstr = Instrument.PIANO;
     int currentSft = 0;
 	
 	private Midi midi;
@@ -106,10 +106,11 @@ public class PianoMachine {
     	//TODO: implement for question 4
 
         record = !(record);
-        if (record && output.size() != 0){
-            for (NoteEvent notes : output){
-                output.remove(notes);
-            }
+        if (record && (output.size() != 0)){
+//            for (NoteEvent notes : output){
+//                output.remove(notes);
+//            }
+            output.clear();
         }
         return record;
     }
