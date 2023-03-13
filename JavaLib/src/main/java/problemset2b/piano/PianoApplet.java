@@ -23,7 +23,7 @@ public class PianoApplet extends Applet {
 
     public void init() {
     	setBackground(Color.green);
-    	final piano.PianoMachine piano = new piano.PianoMachine();
+    	final problemset2b.piano.PianoMachine piano = new problemset2b.piano.PianoMachine();
 
         // this is a standard pattern for associating method calls with GUI
         // events

@@ -2,8 +2,9 @@ package piano;
 
 import javax.sound.midi.MidiUnavailableException;
 
-import midi.Midi;
+import problemset2b.midi.Midi;
 import music.Pitch;
+import problemset2b.piano.PianoMachine;
 
 /**
  * Created by ngaiman_cheung on 17/10/16.
