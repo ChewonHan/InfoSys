@@ -26,7 +26,7 @@ public class Objects {
     double size = 2.0;
 
     // no-arg Constructor: default Constructor
-    Objects(){}
+    protected Objects(){}
 
     // Constructor
     Objects (double newSize){
