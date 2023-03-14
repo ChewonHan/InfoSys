@@ -21,3 +21,13 @@ public class Test {
         System.out.println(postage.getTotal());
     }
 }
+/***
+ * Visitable is connected with the items
+ * Visitor is connected with the concrete class that gets the required value
+ *
+ * in this case, visitable connects with bool, cd, and clothing
+ * visitor connect with the weight of each item
+ *
+ * use the visitable to make a list to store objects
+ * use the postageVisitor (weight) to compute the weight of each item
+ */
