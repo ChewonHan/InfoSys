@@ -1,4 +1,4 @@
-package MIDTERM.OODesignPattern;
+package MIDTERM.OODesignPattern.Observer;
 
 public class Subscriber implements Observer{
     private String message;

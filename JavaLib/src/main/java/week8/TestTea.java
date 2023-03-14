@@ -8,6 +8,5 @@ public class TestTea {
          * For constructors with many many options
          * e.g. StringBuilder */
         Tea2 tea = teaBuilder.setSugar(true).setMilk(true).setIce(true).build();
-
     }
 }

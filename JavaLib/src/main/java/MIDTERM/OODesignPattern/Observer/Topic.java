@@ -1,4 +1,4 @@
-package MIDTERM.OODesignPattern;
+package MIDTERM.OODesignPattern.Observer;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,9 @@ public class Topic implements Subject{
         observers = new ArrayList<Observer>();
     }
     public void postMessage(String msg){
+        System.out.println("Message posted: " + msg);
         this.message = msg;
+        notifyObservers();
     }
     public void notifyObservers(){
         for (Observer o : observers)

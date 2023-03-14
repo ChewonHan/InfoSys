@@ -1,4 +1,4 @@
-package MIDTERM.OODesignPattern;
+package MIDTERM.OODesignPattern.Observer;
 
 public interface Subject {
     void register(Observer o);
